@@ -1,1 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 @import "tailwindcss";
+
+@layer base {
+  body {
+    @apply bg-Blue-700 font-one;
+  }
+}
+
+@theme {
+  --font-one: Roboto;
+  --color-Red: hsl(4, 100%, 67%);
+  --color-Blue-800: hsl(234, 29%, 20%);
+  --color-Blue-700: hsl(235, 18%, 26%);
+  --color-Grey: hsl(0, 0%, 58%);
+}
