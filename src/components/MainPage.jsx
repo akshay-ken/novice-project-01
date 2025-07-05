@@ -3,10 +3,12 @@ import desktopImg from "../assets/images/illustration-sign-up-desktop.svg";
 import markerIcon from "../assets/images/icon-list.svg";
 import { useState } from "react";
 import clsx from "clsx";
+import { ThankYouPage } from "./ThankYouPage";
 
 export function MainPage() {
   const [email, setEmail] = useState("");
   const [mailError, setMailError] = useState(false);
+  const [showDialog, setShowDialog] = useState(false);
 
   const baseOutlineStyle = clsx(
     "w-full outline-2 rounded-md p-4 placeholder:text-Grey mt-2 mb-6",
@@ -23,11 +25,16 @@ export function MainPage() {
       setMailError(true);
     } else {
       setMailError(false);
+      setShowDialog(true);
     }
+  }
+  function closeButton() {
+    setShowDialog(false);
   }
 
   return (
     <>
+      {showDialog && <ThankYouPage closeButton={closeButton} mailId={email} />}
       <main className="w-full md:h-fit md:mx-auto md:max-w-4xl md:bg-white md:flex md:flex-row-reverse md:my-14 md:rounded-3xl">
         <div className="w-full flex md:rounded-r-3xl justify-center md:w-1/2">
           <img src={mboileImg} className="w-full md:hidden" alt="" />
