@@ -3,7 +3,7 @@
 
 @layer base {
   body {
-    @apply font-one;
+    @apply font-one bg-white md:bg-Blue-700;
   }
 }
 
